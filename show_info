@@ -1,0 +1,17 @@
+def show_info(func):
+    def wrapper(*args,**kwargs):
+        print("calling func..")
+        result = func(*args, **kwargs)
+        print("function executed.")
+        return result
+    return wrapper
+@show_info
+def square(num):
+    return num*num
+
+print("square:",square(8))
+
+#output
+#calling func..
+#function executed.
+#square: 64
